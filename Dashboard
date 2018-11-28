@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color: gold;
+  padding: 0px;
+  text-align: center;
+  font-size: 35px;
+  height: 100px;
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'header header header header header header' 
+  'left middle middle middle middle middle' 
+  'footer footer footer footer footer footer';
+  /* grid-column-gap: 10px; - if you want gap between the columns */
+} 
+
+.left,
+.middle{
+  padding: 0px;
+  height: 850px; /* Should be removed. Only for demonstration */
+  width: 300px;
+  background-color: #037cc1;
+  text-align: center;
+  color: white;
+
+}
+s
+/* Style the left column */
+.left {
+  grid-area: left;
+
+}
+
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+}
+
+.btn-group button {
+    background-color: #037cc1; 
+    color: white; /* White text */
+    padding: 20px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+	margin: 0px;
+	height: 100%;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+	border: none;
+	Margin-top: 20px;
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #2583ba;
+	text-decoration: underline;
+}
+
+.logo {
+	margin-top: 20px;
+	float: left;
+}
+
+.menuheading {
+	text-decoration: underline;
+}
+
+.loggedin {
+	margin-left: 1500px;
+	margin-top: -50px;
+}
+
+.loggedinlogo {
+	height: 35px;
+	width: 35px;
+	margin-left: 1700px;
+	margin-top: -200px;
+}
+
+.plus {
+	height: 80px;
+	width: 80px;
+	margin-top: 70px;
+}
+
+.plus:hover {
+	opacity: 0.8;
+}
+
+.box1 {
+	height:250px;
+	width:300px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	text-align: center;
+
+}
+
+.box2 {
+	height:250px;
+	width:300px;
+	margin-left: 400px;
+	margin-top: -350px;
+}
+
+.settings {
+	height: 100px;
+	width: 120px;
+	margin-left: -30px;
+	margin-top: 10px;
+}
+
+.settings:hover {
+	opacity: 0.8;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+</style>
+</head>
+<body>
+    
+
+<div class="grid-container">
+  <div class="header">
+  <image class="logo" src="https://learning.wintec.ac.nz/pluginfile.php/1/core_admin/logocompact/0x70/1524795119/wintec-logo.png">
+    <h2>Dashboard</h2>
+		<image class="loggedinlogo" src="usericon.png">
+	<p class="loggedin">logged in</p>
+  </div>
+  <div class="left">
+  <h2 class="menuheading">Menu</h2>
+		<div class="btn-group">
+<button href="dashboard.html">Home</button>
+<button href="projects.html">projects</button>
+<button href="messages.html">messages</button>
+<button href="settings.html">settings</button>
+
+	</div>
+  </div>
+  <div class="middle" style="background-color: white;">
+   <div class="box1" style="background-color: lightgrey;">
+   <h2>Project<h2>   
+   <image onclick="myFunction()" class="settings" src="settingsicon.png">
+     <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+	
+	<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.settings')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+  </div>
+	</div>
+	<div class="box2" style="background-color: lightgrey;">
+		<image class="plus" src="plus.png">
+	</div>
+  </div>  
+  </div>
+
+
+</body>
+</html>
