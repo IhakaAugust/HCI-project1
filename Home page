@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #FFD700;
+	color: black;
+	height: 150px;
+	padding: 5px;
+}
+
+.logo {
+	margin-top: 40px;
+}
+
+.header {
+	color: black;
+	text-align: center;
+	margin-top: -35px;
+	margin-right: 1000px;
+}
+
+img {
+  display: block; 
+  max-width: 100%;  /* Responsive */ 
+} 
+.background { 
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* Equal to our image */
+ }
+.foreground {
+  position: absolute; /* Overlap the previous div */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4); /* transparent background */
+} 
+.blur {
+  -webkit-filter: blur(2px);
+  filter: blur(2px); 
+} 
+h1 {
+ text-align: center;
+  color: white;
+  margin-top: 24vw; 
+}
+
+.p {
+ color: white;
+ text-align: center;
+ padding: 10px;
+ font-size: 20px;
+ 
+}
+
+.registerbutton {
+    height: 50px; 
+    width:200px; 
+    margin: -40px -40px;
+	margin-bottom: 100px;
+    position:relative;
+    top:50%; 
+    left:50%;
+	background-color: #037cc1;
+	border: none;
+	border-radius: 4px;
+	color: white;
+	font-size: 20px;
+}
+
+.registerbutton:hover {
+    background-color: #2583ba;
+  -webkit-transform:scale(1.3);
+  -moz-transform:scale(1.3);
+  -ms-transform:scale(1.3);
+  -o-transform:scale(1.3);
+  transform:scale(1.3);
+}
+
+
+/* Style the footer */
+.footer {
+    background-color: black;
+    padding: 10px;
+	height: 200px;
+	width: 100%;	
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+.loginlink1 {
+    background-color: #037cc1;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	border-radius: 4px;
+}
+
+/* Set a style for all buttons */
+.loginlink2 {
+	position: absolute;
+	right:250px;
+	top: 70px;
+    background-color: #037cc1;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	border-radius: 4px;
+}
+
+
+.loginlink3 {
+	position: absolute;
+	right:100px;
+	top: 70px;
+    background-color: #037cc1;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100;
+	border-radius: 4px;
+}
+
+.loginlink1:hover {
+    opacity: 0.8;
+}
+
+.loginlink2:hover {
+    opacity: 0.8;
+}
+
+.loginlink3:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+	border: none;
+	border-radius: 2px;
+	color: white;
+}
+
+.cancelbtn:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 30px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 0px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 1% from the bottom and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+	position: absolute;
+	right: 578px;
+    top: 90px;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+.signinheader {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+    color: black;
+    margin-top: 0;
+	background-color: #FFD700; 
+}
+
+.footer {
+	text-align: center;
+	color: white; 
+}
+
+.footernav:hover{
+    color: #037cc1;
+    text-decoration: underline;
+}
+    
+.footernav {
+    text-decoration: none;
+	color: white;
+	margin: 10px;
+}
+
+.headnav:hover{
+    color: #037cc1;
+    text-decoration: underline;
+}
+    
+.headnav {
+	color: black;
+	margin: 10px;
+	text-decoration: none;
+}
+
+.topnavlink {
+	text-align: center;
+	margin-top: -42px;
+	color: black;
+}
+s
+</style>
+</head>
+<body>
+
+<div class="topnav">
+	<image class="logo" src="https://learning.wintec.ac.nz/pluginfile.php/1/core_admin/logocompact/0x70/1524795119/wintec-logo.png">
+	<h1 class="header">Industry Client</h1>
+<button class="loginlink2" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<button class="loginlink3" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+	
+	<h1 class="signinheader">Sign In</h1>
+	
+      <label for="uname"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button class="loginlink1" type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+	
+	<h1 class="signinheader">Register</h1>
+	
+      <label for="uname"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="uname" required>
+
+      <label for="uname"><b>Company Name</b></label>
+      <input type="text" placeholder="Enter Company Name" name="uname" required>
+
+      <label for="uname"><b>Business No</b></label>
+      <input type="text" placeholder="Enter Business No" name="uname" required>
+	  
+      <label for="uname"><b>Mobile No</b></label>
+      <input type="text" placeholder="Enter Mobile No" name="uname" required>
+
+      <label for="uname"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button class="loginlink1" type="submit">Register</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Agree to Terms & Conditions
+      </label><br></br>
+	  <a href="#">Privacy Policy</a> &
+	  <a href="#">Terms & Conditions</a>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+	<nav class="topnavlink">
+	<a class="headnav" href="/html/">About Us</a> |
+	<a class="headnav" href="/jquery/">Contact</a>
+	</nav>
+</div>
+
+  <div class = "background">
+     <img class = "blur" src = "https://timedotcom.files.wordpress.com/2017/10/google-searches-for-its-voice.jpg"/> 
+     <div class = "foreground">
+       <h1>Join us today</h1>
+		<p Class="p">Help our students build a brighter tomorrow.</p>
+	   <button class="registerbutton" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register Now</button>
+	   
+     </div> 
+  </div> 
+
+<div class="footer">
+	<nav>
+		<a class="footernav" href="/html/">About Us</a> |
+		<a class="footernav" href="/css/">Privacy</a> |
+		<a class="footernav" href="/js/">Terms & Conditions</a> |
+		<a class="footernav" href="/jquery/">Contact Us</a>
+	</nav>
+	<p class="p">Wintec 2018. All Rights Reserved</p>
+	<p class="p">Created by Ihaka August</p>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
+
